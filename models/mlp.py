@@ -3,6 +3,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+'''
+    implements a mlp with parameterized layers and
+    activation function.
+'''
+
 class BaseMLP(nn.Module):
     def __init__(self, input_size, layer_sizes, activ_func):
         super(BaseMLP, self).__init__()
