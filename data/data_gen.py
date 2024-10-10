@@ -42,7 +42,7 @@ def create_exp(ops: list, n_variables: int, n_ops: int):
 
     return exp_f, exp_s
 
-def gen(ops: list, n_vars: int, n_ops: int, f_path: str):
+def gen(ops: list, n_vars: int, n_ops: int, f_path: str, f_name:str):
     exp_f, exp_s = create_exp(ops, n_vars, n_ops)
     
     combinations = np.array([list(map(int, np.binary_repr(i, width=n_vars))) for i in range(2**n_vars)])
@@ -53,8 +53,10 @@ def gen(ops: list, n_vars: int, n_ops: int, f_path: str):
     
     os.makedirs(f_path, exist_ok=True)
     
-    output_file = os.path.join(f_path, f'{exp_s}.csv')
+    output_file = os.path.join(f_path, f'{f_name}.csv' if f_name else f'{exp_s}.csv')
     df.to_csv(output_file, index=False)
+
+    return output_file
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Pass the list of operations and the number of variables.')
@@ -66,12 +68,14 @@ if __name__ == '__main__':
                         help="Number of boolean operations performed in the expression.")
     parser.add_argument('--f_path', type=str, required=False, default='./data/datasets/',
                         help="Path to save the dataset.")
+    parser.add_argument('--f_name', type=str, required=False, default='',
+                        help="Name of the dataset file.")
     parser.add_argument('--seed', type=int, required=False, default=42,
                         help="Seed for randomizations.")
     args = parser.parse_args()
 
     np.random.seed(args.seed)
 
-    gen(args.ops, args.n_variables, args.n_ops, args.f_path)
+    gen(args.ops, args.n_variables, args.n_ops, args.f_path, args.f_name)
 
     # Use: python3 data/data_gen.py --ops or and not if_then --n_variables 10 --n_ops 20 --f_path ./data/
