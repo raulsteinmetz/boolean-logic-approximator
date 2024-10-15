@@ -1,9 +1,14 @@
+import random
 import torch
-import numpy
+import numpy as np
 
 
+def learn(model, set_loaders, n_epochs):
+    train_loader, test_loader = set_loaders
 
-
-
-def learn(model, sets):
-    pass
+    for epoch in range(n_epochs):
+        for data, labels in train_loader:
+            pred = model.forward(data)
+            print(pred)
+            print(labels)
+            exit()

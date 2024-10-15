@@ -1,0 +1,25 @@
+seeds: [0, 1] # add more later
+
+dataset:
+  load: True
+  ops: [not, and, or, if_then]
+  n_variables: [10, 20, 30]
+  n_ops: [8, 64, 256]
+  f_path: './data/datasets/'
+
+
+models:
+  mlp:
+    sizes: [
+      [5, 10, 5, 2],
+      [100, 200, 100, 2],
+      [100, 200, 500, 200, 100, 2]
+    ]
+    activ_functions: [
+      'relu',
+      'tanh',
+      'sigmoid'
+    ]
+  kan:
+    dummy: [dummy]
+  

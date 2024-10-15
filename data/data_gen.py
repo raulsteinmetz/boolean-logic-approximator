@@ -3,6 +3,9 @@ import argparse
 import pandas as pd
 import numpy as np
 
+def set_seeds(seed: int):
+    np.random.seed(seed)
+
 def _if_then(p: bool, q: bool):
     return not p or q
 
@@ -42,7 +45,9 @@ def create_exp(ops: list, n_variables: int, n_ops: int):
 
     return exp_f, exp_s
 
-def gen(ops: list, n_vars: int, n_ops: int, f_path: str, f_name:str):
+def gen(ops: list, n_vars: int, n_ops: int, f_path: str, f_name:str, seed: int):
+    set_seeds(seed)
+
     exp_f, exp_s = create_exp(ops, n_vars, n_ops)
     
     combinations = np.array([list(map(int, np.binary_repr(i, width=n_vars))) for i in range(2**n_vars)])
@@ -57,25 +62,3 @@ def gen(ops: list, n_vars: int, n_ops: int, f_path: str, f_name:str):
     df.to_csv(output_file, index=False)
 
     return output_file
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Pass the list of operations and the number of variables.')
-    parser.add_argument('--ops', nargs='+', type=str, required=True,
-                        help="List of logical operators.")
-    parser.add_argument('--n_variables', type=int, required=True,
-                        help="Number of variables in the operation.")
-    parser.add_argument('--n_ops', type=int, required=True,
-                        help="Number of boolean operations performed in the expression.")
-    parser.add_argument('--f_path', type=str, required=False, default='./data/datasets/',
-                        help="Path to save the dataset.")
-    parser.add_argument('--f_name', type=str, required=False, default='',
-                        help="Name of the dataset file.")
-    parser.add_argument('--seed', type=int, required=False, default=42,
-                        help="Seed for randomizations.")
-    args = parser.parse_args()
-
-    np.random.seed(args.seed)
-
-    gen(args.ops, args.n_variables, args.n_ops, args.f_path, args.f_name)
-
-    # Use: python3 data/data_gen.py --ops or and not if_then --n_variables 10 --n_ops 20 --f_path ./data/
