@@ -1,5 +1,7 @@
 import os
+import torch
 from torch.nn.functional import relu, sigmoid, tanh
+from torch.nn import BCELoss
 from data.data_gen import gen
 from models.mlp import BaseMLP
 from util.seeding import set_all_seeds
@@ -50,15 +52,20 @@ def gen_mlps(config: dict):
     return mlp_dict
 
 
-def train_one(model, ds_path: str, config: dict):  
+def train_one(model, ds_path: str, criterion, config: dict):  
     train_loader, test_loader = get_loaders(ds_path, config['train']['batch_size'])
+    optimizer = torch.optim.Adam(model.parameters(), lr=config['train']['lr'])
 
     for epoch in range(config['train']['n_epochs']):
         for data, labels in train_loader:
+            labels = labels.float().view(-1, 1)
             pred = model.forward(data)
-            print(pred)
-            print(labels)
-            exit()
+            loss = criterion(pred, labels)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            print(f'Epoch: {epoch}, Loss: {loss.item()}')
+    exit()
 
 
 def train_all(config: dict):
@@ -68,7 +75,7 @@ def train_all(config: dict):
         mlps = gen_mlps(config)
 
         [
-            train_one(mlp, os.path.join(config['dataset']['f_path'], ds_path), config)
+            train_one(mlp, os.path.join(config['dataset']['f_path'], ds_path), BCELoss(), config)
             for input_size in config['dataset']['n_variables']
             for mlp in mlps[input_size]
             for ds_path in ds_paths
