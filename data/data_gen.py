@@ -1,10 +1,7 @@
 import os
-import argparse
 import pandas as pd
 import numpy as np
 
-def set_seeds(seed: int):
-    np.random.seed(seed)
 
 def _if_then(p: bool, q: bool):
     return not p or q
@@ -45,9 +42,7 @@ def create_exp(ops: list, n_variables: int, n_ops: int):
 
     return exp_f, exp_s
 
-def gen(ops: list, n_vars: int, n_ops: int, f_path: str, f_name:str, seed: int):
-    set_seeds(seed)
-
+def gen(ops: list, n_vars: int, n_ops: int, f_path: str, f_name:str):
     exp_f, exp_s = create_exp(ops, n_vars, n_ops)
     
     combinations = np.array([list(map(int, np.binary_repr(i, width=n_vars))) for i in range(2**n_vars)])
