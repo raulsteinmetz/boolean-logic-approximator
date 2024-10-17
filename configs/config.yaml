@@ -17,8 +17,11 @@ models:
       'relu'
     ]
   kan:
-    dummy: [dummy]
-  
+    width: [1, 5, 1] # 1d input, 1d output, 5 hidden neurons
+    grid: 3 # grid intervalls
+    k: 3 # cubic spline
+
+
 train:
   n_epochs: 100
   batch_size: 32
