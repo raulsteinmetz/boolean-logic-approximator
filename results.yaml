@@ -1,112 +1,51 @@
-'10_16_0':
+'10_32_0':
   KAN_[1, 2, 1]_k4_g3:
     precision: 1.0
   KAN_[1, 5, 1]_k4_g3:
+    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
     precision: 1.0
   KAN_[2, 5, 2]_k4_g3:
     precision: 1.0
-'10_8_0':
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_10x1x2x1:
+    precision: 1.0
+  MLP_10x1x5x1:
+    precision: 1.0
+  MLP_10x2x4x2:
+    precision: 1.0
+  MLP_10x2x5x2:
+    precision: 1.0
+  MLP_10x4x16x4:
+    precision: 1.0
+'10_64_0':
   KAN_[1, 2, 1]_k4_g3:
-    precision: 0.926829268292683
+    precision: 0.9512195121951219
   KAN_[1, 5, 1]_k4_g3:
-    precision: 0.926829268292683
-  KAN_[10, 10]_k4_g3:
+    precision: 0.9560975609756097
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9317073170731708
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 0.9609756097560975
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 0.975609756097561
+  MLP_10x1x2x1:
+    precision: 0.8536585365853658
+  MLP_10x1x5x1:
+    precision: 0.8536585365853658
+  MLP_10x2x4x2:
     precision: 0.9170731707317074
-  KAN_[2, 5, 2]_k4_g3:
-    precision: 0.9219512195121952
-  KAN_[5, 10, 10, 5]_k4_g3:
-    precision: 0.9219512195121952
-  MLP_10x128x256x512x256x128:
-    precision: 1.0
-  MLP_10x256x256:
+  MLP_10x2x5x2:
     precision: 0.9121951219512195
-  MLP_10x32x64x128x64x32:
-    precision: 0.9658536585365853
-  MLP_10x4x8x16x8x4:
-    precision: 0.926829268292683
-  MLP_10x64x64:
-    precision: 0.926829268292683
-'5_16_0':
+  MLP_10x4x16x4:
+    precision: 0.9365853658536586
+'15_32_0':
   KAN_[1, 2, 1]_k4_g3:
     precision: 1.0
   KAN_[1, 5, 1]_k4_g3:
     precision: 1.0
-  KAN_[10, 10]_k4_g3:
-    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9998474214220323
   KAN_[2, 5, 2]_k4_g3:
     precision: 1.0
-  KAN_[5, 10, 10, 5]_k4_g3:
-    precision: 1.0
-  MLP_5x128x256x512x256x128:
-    precision: 1.0
-  MLP_5x256x256:
-    precision: 1.0
-  MLP_5x32x64x128x64x32:
-    precision: 1.0
-  MLP_5x4x8x16x8x4:
-    precision: 1.0
-  MLP_5x64x64:
-    precision: 1.0
-'5_32_0':
-  KAN_[1, 2, 1]_k4_g3:
-    precision: 0.7142857142857143
-  KAN_[1, 5, 1]_k4_g3:
-    precision: 0.7142857142857143
-  KAN_[10, 10]_k4_g3:
-    precision: 0.7142857142857143
-  KAN_[2, 5, 2]_k4_g3:
-    precision: 0.7142857142857143
-  KAN_[5, 10, 10, 5]_k4_g3:
-    precision: 0.7142857142857143
-  MLP_5x128x256x512x256x128:
-    precision: 1.0
-  MLP_5x256x256:
-    precision: 1.0
-  MLP_5x32x64x128x64x32:
-    precision: 1.0
-  MLP_5x4x8x16x8x4:
-    precision: 0.7142857142857143
-  MLP_5x64x64:
-    precision: 0.8571428571428571
-'5_64_0':
-  KAN_[1, 2, 1]_k4_g3:
-    precision: 0.5714285714285714
-  KAN_[1, 5, 1]_k4_g3:
-    precision: 0.5714285714285714
-  KAN_[10, 10]_k4_g3:
-    precision: 0.8571428571428571
-  KAN_[2, 5, 2]_k4_g3:
-    precision: 0.5714285714285714
-  KAN_[5, 10, 10, 5]_k4_g3:
-    precision: 0.5714285714285714
-  MLP_5x128x256x512x256x128:
-    precision: 1.0
-  MLP_5x256x256:
-    precision: 1.0
-  MLP_5x32x64x128x64x32:
-    precision: 1.0
-  MLP_5x4x8x16x8x4:
-    precision: 0.5714285714285714
-  MLP_5x64x64:
-    precision: 1.0
-'5_8_0':
-  KAN_[1, 2, 1]_k4_g3:
-    precision: 0.2857142857142857
-  KAN_[1, 5, 1]_k4_g3:
-    precision: 0.2857142857142857
-  KAN_[10, 10]_k4_g3:
-    precision: 0.7142857142857143
-  KAN_[2, 5, 2]_k4_g3:
-    precision: 0.2857142857142857
-  KAN_[5, 10, 10, 5]_k4_g3:
-    precision: 0.2857142857142857
-  MLP_5x128x256x512x256x128:
-    precision: 1.0
-  MLP_5x256x256:
-    precision: 1.0
-  MLP_5x32x64x128x64x32:
-    precision: 0.8571428571428571
-  MLP_5x4x8x16x8x4:
-    precision: 0.7142857142857143
-  MLP_5x64x64:
-    precision: 0.7142857142857143

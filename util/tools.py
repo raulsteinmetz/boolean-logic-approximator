@@ -98,7 +98,7 @@ def train_one(model, device, model_name, ds_path: str, criterion, config: dict, 
     model = model.to(device)
     
     loss_moving_avg = None
-    smoothing = config['train'].get('smoothing', 0.9)
+    smoothing = config['train'].get('smoothing', 0.7)
 
     progress_bar = tqdm(range(config['train']['n_epochs']), desc='Training', total=config['train']['n_epochs'])
 
@@ -158,3 +158,4 @@ def train_all(config: dict):
                         config=config, 
                         seed=seed
                     )
+
