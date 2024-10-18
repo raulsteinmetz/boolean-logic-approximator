@@ -10,19 +10,20 @@ dataset:
 models:
   mlp:
     sizes: [
-      [1024, 2056, 1024, 512, 256],
-      [5, 10, 5, 2],
-    ]
-    activ_functions: [
-      'relu'
+      [256, 512, 1024, 2048, 1024, 512, 256],
+      [64, 128, 128, 64]
     ]
   kan:
-    width: [1, 5, 1] # 1d input, 1d output, 5 hidden neurons
+    width: [
+      [1, 5, 1],
+      [5, 10, 5],
+    ]
     grid: 3 # grid intervalls
     k: 3 # cubic spline
 
 
 train:
-  n_epochs: 100
+  n_epochs: 50
   batch_size: 32
   lr: 0.0005
+  log_dir: logs

@@ -19,4 +19,4 @@ class BaseMLP(nn.Module):
     def forward(self, x):
         for fc in self.fcs:
             x = self.activ(fc(x))
-        return torch.sigmoid(self.final_layer(x))
+        return self.final_layer(x)
