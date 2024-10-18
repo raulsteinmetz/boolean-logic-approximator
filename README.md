@@ -1,4 +1,4 @@
-# MLPs vs. KANs: An Analysis of Learning Curves on Boolean Equations
+# MLPs vs. KANs: A Comparative Analysis of Their Capacity to Approximate Boolean Equations
 
 #### Warning
 
@@ -7,6 +7,22 @@ This repository was created for a university presentation. It should not be cons
 ### Objective
 
 The goal of this project is to compare the performance of Multilayer Perceptrons (MLPs) and Kolmogorov-Arnold Networks (KANs) in approximating boolean equations by analyzing their learning curves.
+
+## Result Examples
+
+<table>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px;">
+      <img src="https://github.com/user-attachments/assets/e14c9524-611e-491e-b51b-3e016f513862" alt="1_2_1" width="400"/>
+      <p style="text-align: center;">Comparison of a KAN (gray) and an MLP (green)</p>
+    </td>
+    <td style="border: 1px solid #ddd; padding: 10px;">
+      <img src="https://github.com/user-attachments/assets/109447c7-3ead-4d42-85f1-500371a81f6d" alt="kans" width="400"/>
+      <p style="text-align: center;">Comparison of different KAN architecture sizes</p>
+    </td>
+  </tr>
+</table>
+
 
 ### Running the experiments
 `main.py` generates data, trains and tests models specified in the configuration file.
