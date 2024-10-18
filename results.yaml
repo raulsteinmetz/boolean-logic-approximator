@@ -49,3 +49,15 @@
     precision: 0.9998474214220323
   KAN_[2, 5, 2]_k4_g3:
     precision: 1.0
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_15x1x2x1:
+    precision: 0.9951174855050351
+  MLP_15x1x5x1:
+    precision: 0.9972535855965823
+  MLP_15x2x4x2:
+    precision: 0.9945071711931645
+  MLP_15x2x5x2:
+    precision: 0.9954226426609704
+  MLP_15x4x16x4:
+    precision: 1.0
