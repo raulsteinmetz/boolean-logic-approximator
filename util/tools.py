@@ -12,30 +12,19 @@ from tqdm import tqdm
 import numpy as np
 from torch.utils.tensorboard import SummaryWriter
 
-def find_sets(config: dict, n_variables: int, seed: int):
-    base_dir = config['dataset']['f_path']
-    n_vars_str = f'{n_variables}'
-    seed_str = f"_{seed}.csv"
-    
-    return [
-        os.path.relpath(os.path.join(root, file), base_dir)
-        for root, _, files in os.walk(base_dir)
-        for file in files if file.endswith(seed_str) and n_vars_str in file
-    ]
 
-def gen_sets(config: dict, n_variables: int, seed):
-    ds_paths = [
+def gen_sets(config: dict, n_variables: int, seed: int):
+    return [
         gen(
             config['dataset']['ops'],
             n_variables,
             n_ops,
             os.path.join(config['dataset']['f_path'], f'{n_variables}vars_{n_ops}ops'),
             f"{n_variables}_{n_ops}_{seed}",
-            seed
         )
         for n_ops in config['dataset']['n_ops']
     ]
-    return ds_paths
+
 
 def gen_mlps(config: dict, input_size: int):
     return [
@@ -93,9 +82,11 @@ def save_results_to_yaml(results, file_path='results.yaml'):
     with open(file_path, 'w') as file:
         yaml.dump(existing_results, file)
 
-def train_one(model, device, model_name, ds_path: str, criterion, config: dict):
-    log_dir = os.path.join(config['train']['log_dir'] + '/' + os.path.basename(ds_path.replace('.csv', '')), 
-                            model_name)
+def train_one(model, device, model_name, ds_path: str, criterion, config: dict, seed: int):
+    print(f'DATASET: {ds_path}, MODEL: {model_name}')
+
+    log_dir = os.path.join(config['train']['log_dir'] + '/' + f'{seed}/' + \
+                           os.path.basename(ds_path.replace('.csv', '')), model_name)
     
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
@@ -152,16 +143,18 @@ def train_all(config: dict):
     for seed in config['seeds']:
         set_all_seeds(seed)
         for n_variables in config['dataset']['n_variables']:
-            ds_paths = gen_sets(config, n_variables, seed) \
-                if not config['dataset']['load'] else find_sets(config, n_variables, seed)
+            ds_paths = gen_sets(config, n_variables, seed)
             
             for ds_path in ds_paths:
-                for kan in gen_kans(config, n_variables):
-                    model_name = summarize_kan(kan)
-                    print(f'DATASET: {ds_path}, MODEL: {model_name}')
-                    train_one(kan, device, model_name, os.path.join(config['dataset']['f_path'], ds_path), BCEWithLogitsLoss(), config)
-
-                for mlp in gen_mlps(config, n_variables):
-                    model_name = summarize_mlp(mlp)
-                    print(f'DATASET: {ds_path}, MODEL: {model_name}')
-                    train_one(mlp, device, model_name, os.path.join(config['dataset']['f_path'], ds_path), BCEWithLogitsLoss(), config)
+                for model in gen_kans(config, n_variables) + gen_mlps(config, n_variables):
+                    model_name = summarize_kan(model) if isinstance(model, KAN) else \
+                        summarize_mlp(model)
+                    train_one(
+                        model=model, 
+                        device=device, 
+                        model_name=model_name, 
+                        ds_path=os.path.join(ds_path), 
+                        criterion=BCEWithLogitsLoss(), 
+                        config=config, 
+                        seed=seed
+                    )

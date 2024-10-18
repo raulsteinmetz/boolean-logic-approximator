@@ -12,10 +12,14 @@ def _and(p: bool, q: bool):
 def _or(p: bool, q: bool):
     return p or q
 
+def _xor(p: bool, q: bool):
+    return p ^ q
+
 op_map = {
     'and': _and,
     'or': _or,
-    'if_then': _if_then
+    'if_then': _if_then,
+    'xor': _xor
 }
 
 def create_exp(ops: list, n_variables: int, n_ops: int):
