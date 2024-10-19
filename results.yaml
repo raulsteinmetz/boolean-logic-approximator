@@ -61,6 +61,27 @@
     precision: 0.526829268292683
   MLP_10x4x16x4:
     precision: 0.526829268292683
+'10_32_3':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 0.9902439024390244
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 0.9902439024390244
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9902439024390244
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 0.9902439024390244
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 0.9902439024390244
+  MLP_10x1x2x1:
+    precision: 0.8780487804878049
+  MLP_10x1x5x1:
+    precision: 0.9902439024390244
+  MLP_10x2x4x2:
+    precision: 0.8731707317073171
+  MLP_10x2x5x2:
+    precision: 0.9170731707317074
+  MLP_10x4x16x4:
+    precision: 0.9902439024390244
 '10_64_0':
   KAN_[1, 2, 1]_k4_g3:
     precision: 0.9512195121951219
@@ -124,6 +145,27 @@
     precision: 0.7463414634146341
   MLP_10x4x16x4:
     precision: 0.7463414634146341
+'10_64_3':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 0.926829268292683
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 0.9707317073170731
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9609756097560975
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 0.9609756097560975
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 0.9804878048780488
+  MLP_10x1x2x1:
+    precision: 0.9024390243902439
+  MLP_10x1x5x1:
+    precision: 0.9024390243902439
+  MLP_10x2x4x2:
+    precision: 0.9024390243902439
+  MLP_10x2x5x2:
+    precision: 0.9024390243902439
+  MLP_10x4x16x4:
+    precision: 0.9219512195121952
 '15_32_0':
   KAN_[1, 2, 1]_k4_g3:
     precision: 1.0
@@ -237,4 +279,16 @@
   KAN_[2, 4, 2]_k4_g3:
     precision: 1.0
   KAN_[2, 5, 2]_k4_g3:
+    precision: 1.0
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_15x1x2x1:
+    precision: 0.9258468111077205
+  MLP_15x1x5x1:
+    precision: 0.938358254501068
+  MLP_15x2x4x2:
+    precision: 1.0
+  MLP_15x2x5x2:
+    precision: 1.0
+  MLP_15x4x16x4:
     precision: 1.0
