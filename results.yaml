@@ -19,6 +19,48 @@
     precision: 1.0
   MLP_10x4x16x4:
     precision: 1.0
+'10_32_1':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 0.926829268292683
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 0.9658536585365853
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9658536585365853
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 0.9512195121951219
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 0.9902439024390244
+  MLP_10x1x2x1:
+    precision: 0.5365853658536586
+  MLP_10x1x5x1:
+    precision: 0.5365853658536586
+  MLP_10x2x4x2:
+    precision: 0.5365853658536586
+  MLP_10x2x5x2:
+    precision: 0.5365853658536586
+  MLP_10x4x16x4:
+    precision: 0.5365853658536586
+'10_32_2':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 0.8926829268292683
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 0.9609756097560975
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9609756097560975
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 0.9609756097560975
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 0.9853658536585366
+  MLP_10x1x2x1:
+    precision: 0.526829268292683
+  MLP_10x1x5x1:
+    precision: 0.526829268292683
+  MLP_10x2x4x2:
+    precision: 0.526829268292683
+  MLP_10x2x5x2:
+    precision: 0.526829268292683
+  MLP_10x4x16x4:
+    precision: 0.526829268292683
 '10_64_0':
   KAN_[1, 2, 1]_k4_g3:
     precision: 0.9512195121951219
@@ -40,7 +82,91 @@
     precision: 0.9121951219512195
   MLP_10x4x16x4:
     precision: 0.9365853658536586
+'10_64_1':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 1.0
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 1.0
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 1.0
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_10x1x2x1:
+    precision: 0.8585365853658536
+  MLP_10x1x5x1:
+    precision: 0.8585365853658536
+  MLP_10x2x4x2:
+    precision: 0.9121951219512195
+  MLP_10x2x5x2:
+    precision: 0.9609756097560975
+  MLP_10x4x16x4:
+    precision: 0.9609756097560975
+'10_64_2':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 0.8
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 0.8536585365853658
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.7268292682926829
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 0.8536585365853658
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 0.9463414634146341
+  MLP_10x1x2x1:
+    precision: 0.6926829268292682
+  MLP_10x1x5x1:
+    precision: 0.5170731707317073
+  MLP_10x2x4x2:
+    precision: 0.6926829268292682
+  MLP_10x2x5x2:
+    precision: 0.7463414634146341
+  MLP_10x4x16x4:
+    precision: 0.7463414634146341
 '15_32_0':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 1.0
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9998474214220323
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 1.0
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_15x1x2x1:
+    precision: 0.9951174855050351
+  MLP_15x1x5x1:
+    precision: 0.9972535855965823
+  MLP_15x2x4x2:
+    precision: 0.9945071711931645
+  MLP_15x2x5x2:
+    precision: 0.9954226426609704
+  MLP_15x4x16x4:
+    precision: 1.0
+'15_32_1':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 1.0
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 0.9998474214220323
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 1.0
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_15x1x2x1:
+    precision: 0.9951174855050351
+  MLP_15x1x5x1:
+    precision: 0.9972535855965823
+  MLP_15x2x4x2:
+    precision: 0.9945071711931645
+  MLP_15x2x5x2:
+    precision: 0.9954226426609704
+  MLP_15x4x16x4:
+    precision: 1.0
+'15_32_2':
   KAN_[1, 2, 1]_k4_g3:
     precision: 1.0
   KAN_[1, 5, 1]_k4_g3:
@@ -81,4 +207,34 @@
   MLP_15x2x5x2:
     precision: 1.0
   MLP_15x4x16x4:
+    precision: 1.0
+'15_64_1':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 1.0
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 1.0
+  KAN_[2, 5, 2]_k4_g3:
+    precision: 1.0
+  KAN_[4, 16, 4]_k4_g3:
+    precision: 1.0
+  MLP_15x1x2x1:
+    precision: 0.9258468111077205
+  MLP_15x1x5x1:
+    precision: 0.938358254501068
+  MLP_15x2x4x2:
+    precision: 1.0
+  MLP_15x2x5x2:
+    precision: 1.0
+  MLP_15x4x16x4:
+    precision: 1.0
+'15_64_2':
+  KAN_[1, 2, 1]_k4_g3:
+    precision: 1.0
+  KAN_[1, 5, 1]_k4_g3:
+    precision: 1.0
+  KAN_[2, 4, 2]_k4_g3:
+    precision: 1.0
+  KAN_[2, 5, 2]_k4_g3:
     precision: 1.0
