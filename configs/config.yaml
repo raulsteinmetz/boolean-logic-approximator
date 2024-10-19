@@ -22,7 +22,7 @@ models:
       [2, 5, 2],
       [4, 16, 4]
     ]
-    grid: 3 # grid intervalls
+    grid: 3 # grid intervals
     k: 4 # degree of the spline
 
 
